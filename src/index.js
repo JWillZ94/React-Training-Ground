@@ -8,14 +8,12 @@ import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import { FETCH_BEGIN, FETCH_SUCCESS, FETCH_FAILURE } from './actions';
 import thunk from 'redux-thunk';
-import './data';
+import * as data from './data';
 import rootReducer from './reducers';
 
 const store = createStore(rootReducer, composeWithDevTools(), applyMiddleware(thunk));
 
-store.dispatch(dispatch => {
-  dispatch(FETCH_BEGIN);
-});
+store.dispatch(FETCH_SUCCESS);
 
 console.log(store.getState());
 

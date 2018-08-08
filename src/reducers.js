@@ -1,5 +1,6 @@
 import { combineReducers } from 'redux';
 import { Sorts } from './actions';
+import * as data from './data';
 
 let initialState = {
   dataItems: [],
@@ -17,7 +18,8 @@ function exReducer1(state = initialState, action) {
     case 'FETCH_SUCCESS':
       return Object.assign({}, state, {
         isLoading: false,
-        msg: 'loaded stuff'
+        msg: 'loaded stuff',
+        dataItems: [data]
       });
     case 'FETCH_FAILURE':
       return Object.assign({}, state, {
